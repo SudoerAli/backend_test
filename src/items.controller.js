@@ -12,18 +12,23 @@ async function findItem(req, res, next, id) {
 	next();
 }
 
+
 async function createItem(req, res, next) {
 	const newItem = service.createItem();
 	return res.json({ item: newItem });
 }
 
 async function getAllItems(req, res, next) {
+	// Get all items from the service
 	let items = await service.getAllItems();
 
+	// Filter the items by the filter_by query parameter
 	const filterBy = req.query.filter_by;
 	if (filterBy) {
+		// If the filter_by query parameter is 'active', then get active items
 		if (filterBy === 'active') {
 			items = items.filter(item => item.isActive);
+		// If the filter_by query parameter is 'inactive', then return inactive items
 		} else if (filterBy === 'inactive') {
 			items = items.filter(item => !item.isActive);
 		}
@@ -45,6 +50,7 @@ async function deleteItem(req, res, next) {
 	return res.json({ item: req.item });
 }
 
+// Export the controller functions
 module.exports = {
 	findItem,
 	createItem,

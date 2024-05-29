@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+// Filename for the items data file
 const itemsFilename = process.env.ITEMS_FILENAME || 'items.json';
 
+// Load the items data from the json file
 let items = JSON.parse(
 	fs.readFileSync(path.join(__dirname, 'data', itemsFilename)).toString(),
 );
@@ -12,6 +14,7 @@ async function createItem(itemData = {}) {
 	return newItem;
 }
 
+// Function to get all items
 async function getAllItems() {
 	return items;
 }
