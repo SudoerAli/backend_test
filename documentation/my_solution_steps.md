@@ -10,8 +10,15 @@
 
 1. Fix `GET /items` route so that it properly returns the list of all existing items:
 
-   1. I added `ITEMS_FILENAME=items.json` line to the `.env` file, because _src\items.service.js_ actually use the `ITEMS_FILENAME` environment variable.
+   1. I added `ITEMS_FILENAME=items.json` line to the `.env` file, because _src\items.service.js_ actually uses the `ITEMS_FILENAME` environment variable.
    1. I corrected the typo when declaring the `itemsFilename` constant, adding `s` as it was passed as argument to `path.join` inside `fs.readFileSync` method.
+      The error is fixed, but it returns an empty list. (Test was done on Postman)
    1. I paused the `getAllItems` function in the _items.controller.js_ using await when calling the `getAllItems` function of the _items.service.js_ file to make sure the function returns the list of items before sending the response. The list of the 3 items is well returned on `GET /items` route.
+
+1. Add the ability to filter the items in the GET /items route:
+
+   - In the `getAllItems` function of the _items.controller.js_ file, if the `filter_by` is provided in the query of the request object, I filtered the items list based on their `isActive` property value according to the `filter_by` value if it is `active` or `inactive`. The filtered list is then returned.
+
+   API test was done on Postman. The filtered list is returned as expected.
 
 

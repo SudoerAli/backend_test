@@ -18,7 +18,17 @@ async function createItem(req, res, next) {
 }
 
 async function getAllItems(req, res, next) {
-	const items = await service.getAllItems();
+	let items = await service.getAllItems();
+
+	const filterBy = req.query.filter_by;
+	if (filterBy) {
+		if (filterBy === 'active') {
+			items = items.filter(item => item.isActive);
+		} else if (filterBy === 'inactive') {
+			items = items.filter(item => !item.isActive);
+		}
+	}
+
 	return res.json({ items });
 }
 
