@@ -18,7 +18,7 @@ async function createItem(req, res, next) {
 }
 
 async function getAllItems(req, res, next) {
-	const items = service.getAllItems();
+	const items = await service.getAllItems();
 	return res.json({ items });
 }
 

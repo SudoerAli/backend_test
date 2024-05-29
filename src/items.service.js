@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const itemFilename = process.env.ITEMS_FILENAME || 'items.json';
+const itemsFilename = process.env.ITEMS_FILENAME || 'items.json';
 
 let items = JSON.parse(
 	fs.readFileSync(path.join(__dirname, 'data', itemsFilename)).toString(),
