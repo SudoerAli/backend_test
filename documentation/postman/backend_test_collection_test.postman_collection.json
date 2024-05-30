@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "ca98a5c4-aab4-4d9d-a1f1-8fb55766f9c3",
+		"name": "backend_test_collection_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33175864"
+	},
+	"item": [
+		{
+			"name": "GET /items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}"
+					]
+				},
+				"description": "Get all items"
+			},
+			"response": [
+				{
+					"name": "GET /items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"57-kOBtETKL5vE1ksn2vl70K8IoWls\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:05:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"id\": 1,\n            \"isActive\": true\n        },\n        {\n            \"id\": 2,\n            \"isActive\": false\n        },\n        {\n            \"id\": 3,\n            \"isActive\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /items?filter_by=active",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}?{{p1}}=active",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}"
+					],
+					"query": [
+						{
+							"key": "{{p1}}",
+							"value": "active"
+						}
+					]
+				},
+				"description": "Get all items by filter_by parameter"
+			},
+			"response": [
+				{
+					"name": "GET /items?filter_by=active",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}?{{p1}}=active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}"
+							],
+							"query": [
+								{
+									"key": "{{p1}}",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-SyJUoZlV92saCovfAU588vzgAKw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:04:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"id\": 1,\n            \"isActive\": true\n        },\n        {\n            \"id\": 3,\n            \"isActive\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /items?filter_by=inactive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}?{{p1}}=inactive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}"
+					],
+					"query": [
+						{
+							"key": "{{p1}}",
+							"value": "inactive"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /items?filter_by=inactive",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}?{{p1}}=inactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}"
+							],
+							"query": [
+								{
+									"key": "{{p1}}",
+									"value": "inactive"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-MzkuJikOP7eehkcFtBBu0+wvaFU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:06:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"id\": 2,\n            \"isActive\": false\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /items (create a new empty item)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /items",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:11:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /items/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /items/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:20:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				},
+				{
+					"name": "GET /items/2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:20:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				},
+				{
+					"name": "GET /items/4",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:21:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /items/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"item\": {\r\n    \"name\": \"Update item 1\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /items/1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"item\": {\r\n    \"name\": \"Update item 1\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:51:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /items/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/{{base_path}}/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"{{base_path}}",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /items/1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/{{base_path}}/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"{{base_path}}",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-fYHLlPmdbmfTR6/N0aOSBzdSXjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 May 2024 00:49:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"item\": {}\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_path",
+			"value": "items",
+			"type": "string"
+		},
+		{
+			"key": "p1",
+			"value": "filter_by",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

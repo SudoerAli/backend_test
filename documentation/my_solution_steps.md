@@ -23,15 +23,20 @@
 
 1.  Identify some basic security and stability issues, and suggest simple ways of correcting them:
 
-    - The fallback value is hardcoded in the `src/server.js` file. It is better to use another `PORT_2` environment variable as the fallback value (different of 3000) to avoid hardcoding. 
+    - The fallback value is hardcoded in the `src/server.js` file. It is better to use another `PORT_2` environment variable as the fallback value (different of 3000) to avoid hardcoding.
     - Same remark for the filename of the items file in the _src/items.service.js_ file.
     - The _.env_ file is not added to the _.gitignore_ file. It is better to add it to avoid pushing sensitive data to the repository.
     - Same remark for the _data/items.json_ file. Especially if the file contains confidential data.
     - The app does not check variables types. It is better to check the types of the variables to avoid bugs using typescript for example.
-    - The  app does not treat the errors (hanling exceptions). It is better to treat the errors to avoid the app from crashing.
+    - The app does not treat the errors (hanling exceptions). It is better to treat the errors to avoid the app from crashing.
     - The `items.json` file is read synchronously. It is better to read it asynchronously to avoid blocking the app especially if the file is large.
     - The app is not using any logger. It is better to use a logger to log the errors and the info messages.
     - The app is not using any testing framework. It is better to use a testing framework to test the app functionalities.
     - The app is not using any linter. It is better to use a linter to enforce a coding style and to avoid bugs.
     - The app is not using any authentication. Meaning that anyone can access the data. It is better to use an authentication system to protect the data.
+    - The app does not set the CORS headers. It is better to set the CORS headers to avoid the app from being accessed by unauthorized domains.
 
+1.  @TODO Mongodb branch
+
+1.  Postman tests:
+    - Basic tests are done on Postman to test the API routes. The tests are saved in the _documentation/postman_ folder in a json file. You can import them in Postman to run them.
