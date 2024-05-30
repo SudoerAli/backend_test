@@ -19,7 +19,7 @@
 - Clone the repository using Github Desktop app or with `git clone {repo_url}` command.
 - Run `npm install` to install the project dependencies.
 - Run `npm start` to start the server on port **3000**.
-- Use Postman to test the API routes (import _documentation/postman/Nodejs-Express-App.postman_collection.json_ file to Postman to run the tests).
+- Use Postman to test the API routes (import _documentation/postman/backend_test_collection_test.postman_collection.json_ file to Postman to run the tests).
 - Switch to the mongodb branch to see the app using MongoDB `git checkout mongodb`.
 - Run `npm run init_mongodb` to initialize the MongoDB database.
 - Run `npm run start` to start the MongoDB server (make sure ports **27017** and **3000** are not used).
