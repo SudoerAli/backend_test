@@ -36,7 +36,14 @@
     - The app is not using any authentication. Meaning that anyone can access the data. It is better to use an authentication system to protect the data.
     - The app does not set the CORS headers. It is better to set the CORS headers to avoid the app from being accessed by unauthorized domains.
 
-1.  @TODO Mongodb branch
+1.  Mongodb branch:
+
+    - I created a new branch called `mongodb` to implement the MongoDB database. I will use the `mongoose` library to interact with the MongoDB database.
+    - I created a docker-compose file to run the MongoDB database in a container with the same credentials defined in the _.env_ file. The database is exposed on port 27017.
+    - The items collection is created in the database `backend-test` and the 3 items from the _items.json_ file are inserted using the `init_mongodb.js` script file.
+    - You need to run `npm run init_mongodb` at the first time to install MongoDB database, its dependencies and to initialize the database with the items.
+    - I created a new `items.model.js` file to define the `Item` schema and the `Item` model.
+    - I modified the `items.service.js` file to use the `Item` model to interact with the MongoDB database instead of the `items.json` file. Service functions are modified to use the MongoDB database.
 
 1.  Postman tests:
     - Basic tests are done on Postman to test the API routes. The tests are saved in the _documentation/postman_ folder in a json file. You can import them in Postman to run them.

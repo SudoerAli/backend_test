@@ -1,36 +1,51 @@
-const fs = require('fs');
-const path = require('path');
-// Filename for the items data file
-const itemsFilename = process.env.ITEMS_FILENAME || 'items.json';
+const mongoose = require('mongoose');
+const Item = require('./items.model');
 
-// Load the items data from the json file
-let items = JSON.parse(
-	fs.readFileSync(path.join(__dirname, 'data', itemsFilename)).toString(),
-);
+// Set `strictQuery: false` to globally opt into filtering by properties that aren't in the schema
+mongoose.set("strictQuery", false);
+// Connection URL
+const url = process.env.DB_HOST || '';
 
+// Connect to the database
+mongoose.connect(url)
+	.then(() => {
+		console.log("Connected successfully to server");
+	})
+	.catch(err => console.error(err));
+
+
+// Function to create a new item
 async function createItem(itemData = {}) {
-	const newItem = { ...itemData, id: items.length + 1, lastUpdate: new Date() };
-	items = [...items, newItem];
+	const numberOfItems = await Item.countDocuments({});
+	const newItem = { ...itemData, id: numberOfItems + 1, lastUpdate: new Date() };
+	// Create a new item in the database
+	Item.create(newItem);
 	return newItem;
 }
 
 // Function to get all items
 async function getAllItems() {
-	return items;
+	// Get all items from the database and return them
+	return Item.find({}).exec();
 }
-
+// Function to find an item by id
 async function findItem(id) {
-	return items.find((i) => +i.id === +id);
+	// Find the item in the database and return it
+	return Item.findOne({ id: id }).exec();
 }
 
+// Function to update an item with new data
 async function updateItem(item, itemData = {}) {
 	const updatedItem = { ...item, ...itemData, lastUpdate: new Date() };
-	items = [...items.filter((i) => i.id !== item.id), updatedItem];
+	// Update the item in the database
+	Item.updateOne({ id: item.id }, updatedItem)
 	return updatedItem;
 }
 
+// Function to delete an item
 async function deleteItem(item) {
-	items = items.filter((i) => i.id !== item.id);
+	// Delete the item from the database
+	Item.deleteOne({ id: item.id });
 }
 
 module.exports = { createItem, getAllItems, findItem, updateItem, deleteItem };

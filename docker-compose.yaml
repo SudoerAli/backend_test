@@ -1,0 +1,17 @@
+version: '1.0'
+
+services:
+  mongodb:
+    build: .
+    container_name: mongodb_container
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=MY_USER
+      - MONGO_INITDB_ROOT_PASSWORD=MY_PWD
+      - DB_HOST=mongodb://127.0.0.1:27017/backend-test
+    ports:
+      - '27017:27017' # If you have mongodb installed on your machine, you may change this port (left one) or stop your local mongodb to avoid conflicts
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data:

@@ -4,12 +4,14 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
+        "init_mongodb": "bash init_mongodb.sh",
         "start": "nodemon src/server.js"
     },
     "dependencies": {
         "cors": "2.8.5",
         "dotenv": "^16.4.5",
-        "express": "^4.19.2"
+        "express": "^4.19.2",
+        "mongoose": "^8.4.0"
     },
     "devDependencies": {
         "nodemon": "^3.1.1"

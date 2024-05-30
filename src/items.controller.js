@@ -28,9 +28,12 @@ async function getAllItems(req, res, next) {
 		// If the filter_by query parameter is 'active', then get active items
 		if (filterBy === 'active') {
 			items = items.filter(item => item.isActive);
-		// If the filter_by query parameter is 'inactive', then return inactive items
+			// If the filter_by query parameter is 'inactive', then return inactive items
 		} else if (filterBy === 'inactive') {
 			items = items.filter(item => !item.isActive);
+		} else {
+			// If the filter_by query parameter is neither 'active' nor 'inactive', return an error
+			return res.status(400).json({ error: 'Invalid filter_by parameter. Allowed values are "active" or "inactive".' });
 		}
 	}
 
