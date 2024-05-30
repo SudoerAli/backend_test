@@ -1,3 +1,29 @@
+# App environment:
+
+- Node.js v22.2.0
+- npm v10.8.0
+- VS Code v1.89.1
+- Postman v10.24.26
+- Github Desktop v3.4.0
+- Docker v24.0.6
+- Windows 11 Éducation
+
+# Branches:
+
+- main: contains the original code of the app Merged with the do_tasks branch.
+- do_tasks: contains the code of the app after doing the tasks.
+- mongodb: contains the code of the app using MongoDB.
+
+# How to run the app:
+
+- Clone the repository using Github Desktop app or with `git clone {repo_url}` command.
+- Run `npm install` to install the project dependencies.
+- Run `npm start` to start the server on port **3000**.
+- Use Postman to test the API routes (import _documentation/postman/Nodejs-Express-App.postman_collection.json_ file to Postman to run the tests).
+- Switch to the mongodb branch to see the app using MongoDB `git checkout mongodb`.
+- Run `npm run init_mongodb` to initialize the MongoDB database.
+- Run `npm run start` to start the MongoDB server (make sure ports **27017** and **3000** are not used).
+
 # Solution steps
 
 1.  I forked the original repo from the provided Github repository and kept the forked repo public. I cloned the repository using Github desktop app. I open the folder with VS Code.
@@ -32,11 +58,12 @@
     - The `items.json` file is read synchronously. It is better to read it asynchronously to avoid blocking the app especially if the file is large.
     - The app is not using any logger. It is better to use a logger to log the errors and the info messages.
     - The app is not using any testing framework. It is better to use a testing framework to test the app functionalities.
-    - The app is not using any linter. It is better to use a linter to enforce a coding style and to avoid bugs.
     - The app is not using any authentication. Meaning that anyone can access the data. It is better to use an authentication system to protect the data.
     - The app does not set the CORS headers. It is better to set the CORS headers to avoid the app from being accessed by unauthorized domains.
 
-1.  @TODO Mongodb branch
+1. Mongodb branch:
+
+   You can switch to the mongodb branch to see the app using MongoDB. The app is using the mongoose library to create and manage the MongoDB database. The app is using the `items` collection to store the items data. The `items` collection is created when the app is initialized. 
 
 1.  Postman tests:
     - Basic tests are done on Postman to test the API routes. The tests are saved in the _documentation/postman_ folder in a json file. You can import them in Postman to run them.
