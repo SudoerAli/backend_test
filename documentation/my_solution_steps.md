@@ -1,4 +1,30 @@
-# Solution steps
+# App environment:
+
+- Node.js v22.2.0
+- npm v10.8.0
+- VS Code v1.89.1
+- Postman v10.24.26
+- Github Desktop v3.4.0
+- Docker v24.0.6
+- Windows 11 Éducation
+
+# Branches:
+
+- main: contains the original code of the app Merged with the do_tasks branch.
+- do_tasks: contains the code of the app after doing the tasks.
+- mongodb: contains the code of the app using MongoDB.
+
+# How to run the app:
+
+- Clone the repository using Github Desktop app or with `git clone {repo_url}` command.
+- Run `npm install` to install the project dependencies.
+- Run `npm start` to start the server on port **3000**.
+- Use Postman to test the API routes (import _documentation/postman/Nodejs-Express-App.postman_collection.json_ file to Postman to run the tests).
+- Switch to the mongodb branch to see the app using MongoDB `git checkout mongodb`.
+- Run `npm run init_mongodb` to initialize the MongoDB database.
+- Run `npm run start` to start the MongoDB server (make sure ports **27017** and **3000** are not used).
+
+# Solution steps:
 
 1.  I forked the original repo from the provided Github repository and kept the forked repo public. I cloned the repository using Github desktop app. I open the folder with VS Code.
 
